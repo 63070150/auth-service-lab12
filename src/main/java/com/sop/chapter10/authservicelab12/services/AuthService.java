@@ -24,8 +24,8 @@ public class AuthService {
                 .role("admin")
                 .build();
         String accessToken = jwt.generate(user, "ACCESS");
-        String refrestToken = jwt.generate(user, "REFRESH");
+        String refreshToken = jwt.generate(user, "REFRESH");//error
 
-        return new AuthResponse(accessToken, refrestToken);
+        return new AuthResponse(accessToken, refreshToken);
     }
 }

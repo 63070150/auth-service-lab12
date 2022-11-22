@@ -6,5 +6,5 @@ spring:
     name: auth-service
 
 jwt:
-  secret: ladskjflksadrewtwertjfklasjdflkjdsakfjlsdqweqweewreqrtreytryakjfadsklfj
+  secret: BvPHGMBC0ia4uDuxxqPD5DTbWC9F9TWvPStp3pb7ARoGoK2mJ3pd3YG4lxA9i8bj6DTbadwezxgeEByY
   expiration: 86400

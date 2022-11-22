@@ -4,7 +4,7 @@ import com.sop.chapter10.authservicelab12.entities.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import lombok.Value;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -12,7 +12,6 @@ import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 @Component
 public class JwtUtil {
@@ -43,8 +42,8 @@ public class JwtUtil {
         return expiration.before(new Date());
     }
 
-    private String generate(User userVO, String type) {
-        Map<String, Objects> claims = new HashMap<>();
+    public String generate(User userVO, String type) {
+        Map<String, Object> claims = new HashMap<>();
         claims.put("id", userVO.getId());
         claims.put("role", userVO.getRole());
         return doGenerateToken(claims, userVO.getEmail(), type);
